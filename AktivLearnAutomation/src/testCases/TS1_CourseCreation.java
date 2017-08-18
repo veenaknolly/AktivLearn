@@ -21,7 +21,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
-
+// Test Case for Sscenario 1
 public class TS1_CourseCreation {
 	RemoteWebDriver driver;
 	String adminID,adminpwd,CourseName;
