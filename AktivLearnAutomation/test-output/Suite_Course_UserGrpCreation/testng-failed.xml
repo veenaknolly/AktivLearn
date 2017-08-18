@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite_Course_UserGrpCreation]">
+  <test name="UserGrp_Creation(failed)">
+    <classes>
+      <class name="testCases.TS2_UserGroupCreation">
+        <methods>
+          <include name="testStep10_scheduleCourse"/>
+          <include name="afterClass"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="testStep11_assignCourseFees"/>
+          <include name="Prereqs"/>
+        </methods>
+      </class> <!-- testCases.TS2_UserGroupCreation -->
+    </classes>
+  </test> <!-- UserGrp_Creation(failed) -->
+</suite> <!-- Failed suite [Suite_Course_UserGrpCreation] -->

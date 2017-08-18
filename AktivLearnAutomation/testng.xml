@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite_Course_UserGrpCreation" parallel="false">
+  <test name="Course_Creation">
+    <classes>
+      <class name="testCases.TS1_CreatingCourseModule"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="UserGrp_Creation">
+    <classes>
+      <class name="testCases.TS2_UserGroupCreation"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

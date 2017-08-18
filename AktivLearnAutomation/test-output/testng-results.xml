@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="16" passed="16">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="132641" started-at="2017-08-17T09:52:34Z" finished-at="2017-08-17T09:54:47Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="132641" started-at="2017-08-17T09:52:34Z" finished-at="2017-08-17T09:54:47Z">
+      <class name="testCases.TS1_CourseCreation">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCases.TS1_CourseCreation@4c70fda8]" name="beforeSuite" is-config="true" duration-ms="5" started-at="2017-08-17T15:22:34Z" finished-at="2017-08-17T15:22:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testCases.TS1_CourseCreation@4c70fda8]" name="beforeClass" is-config="true" duration-ms="1219" started-at="2017-08-17T15:22:34Z" finished-at="2017-08-17T15:22:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="testStep1_navigateToAktivLearn()[pri:0, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep1_navigateToAktivLearn" duration-ms="6341" started-at="2017-08-17T15:22:35Z" finished-at="2017-08-17T15:22:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep1_navigateToAktivLearn -->
+        <test-method status="PASS" signature="testStep2_clickOnStartPlaying()[pri:5, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep2_clickOnStartPlaying" duration-ms="112" started-at="2017-08-17T15:22:42Z" finished-at="2017-08-17T15:22:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep2_clickOnStartPlaying -->
+        <test-method status="PASS" signature="testStep3_logintoAktivLearn()[pri:10, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep3_logintoAktivLearn" duration-ms="2514" started-at="2017-08-17T15:22:42Z" finished-at="2017-08-17T15:22:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep3_logintoAktivLearn -->
+        <test-method status="PASS" signature="testStep4_clickOnAccount()[pri:15, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep4_clickOnAccount" duration-ms="1167" started-at="2017-08-17T15:22:44Z" finished-at="2017-08-17T15:22:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep4_clickOnAccount -->
+        <test-method status="PASS" signature="testStep5_clickOnCourses()[pri:20, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep5_clickOnCourses" duration-ms="1036" started-at="2017-08-17T15:22:46Z" finished-at="2017-08-17T15:22:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep5_clickOnCourses -->
+        <test-method status="PASS" signature="testStep6_AddNewCourse()[pri:25, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep6_AddNewCourse" duration-ms="11879" started-at="2017-08-17T15:22:47Z" finished-at="2017-08-17T15:22:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep6_AddNewCourse -->
+        <test-method status="PASS" signature="testStep7_CreateNewModule()[pri:30, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep7_CreateNewModule" duration-ms="2899" started-at="2017-08-17T15:22:58Z" finished-at="2017-08-17T15:23:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep7_CreateNewModule -->
+        <test-method status="PASS" signature="testStep8_CreateTextHeaderForModule1()[pri:35, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep8_CreateTextHeaderForModule1" duration-ms="3880" started-at="2017-08-17T15:23:01Z" finished-at="2017-08-17T15:23:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep8_CreateTextHeaderForModule1 -->
+        <test-method status="PASS" signature="testStep8_CreateAssignmentForModule1()[pri:40, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep8_CreateAssignmentForModule1" duration-ms="24852" started-at="2017-08-17T15:23:05Z" finished-at="2017-08-17T15:23:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep8_CreateAssignmentForModule1 -->
+        <test-method status="PASS" signature="testStep_ExternalURLtForModule1()[pri:41, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep_ExternalURLtForModule1" duration-ms="8971" started-at="2017-08-17T15:23:30Z" finished-at="2017-08-17T15:23:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep_ExternalURLtForModule1 -->
+        <test-method status="PASS" signature="testStep9_CreateQuizForModule1()[pri:45, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep9_CreateQuizForModule1" duration-ms="24170" started-at="2017-08-17T15:23:39Z" finished-at="2017-08-17T15:24:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep9_CreateQuizForModule1 -->
+        <test-method status="PASS" signature="testStep9_CreateTextHeaderForModule2()[pri:51, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep9_CreateTextHeaderForModule2" duration-ms="3917" started-at="2017-08-17T15:24:03Z" finished-at="2017-08-17T15:24:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep9_CreateTextHeaderForModule2 -->
+        <test-method status="PASS" signature="testStep10_CreateQuizForModule2()[pri:52, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep10_CreateQuizForModule2" duration-ms="23376" started-at="2017-08-17T15:24:07Z" finished-at="2017-08-17T15:24:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep10_CreateQuizForModule2 -->
+        <test-method status="PASS" signature="testStep11_CreateFileForModule2()[pri:55, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep11_CreateFileForModule2" duration-ms="5641" started-at="2017-08-17T15:24:31Z" finished-at="2017-08-17T15:24:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep11_CreateFileForModule2 -->
+        <test-method status="PASS" signature="testStep_CreateDiscussionForModule2()[pri:56, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep_CreateDiscussionForModule2" duration-ms="5623" started-at="2017-08-17T15:24:36Z" finished-at="2017-08-17T15:24:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep_CreateDiscussionForModule2 -->
+        <test-method status="PASS" signature="testStep12_CreatePageForModule2()[pri:60, instance:testCases.TS1_CourseCreation@4c70fda8]" name="testStep12_CreatePageForModule2" duration-ms="4990" started-at="2017-08-17T15:24:42Z" finished-at="2017-08-17T15:24:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStep12_CreatePageForModule2 -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testCases.TS1_CourseCreation@4c70fda8]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-08-17T15:24:47Z" finished-at="2017-08-17T15:24:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCases.TS1_CourseCreation@4c70fda8]" name="afterSuite" is-config="true" duration-ms="0" started-at="2017-08-17T15:24:47Z" finished-at="2017-08-17T15:24:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- testCases.TS1_CourseCreation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
