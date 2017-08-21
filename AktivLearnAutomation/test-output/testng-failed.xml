@@ -5,10 +5,12 @@
     <classes>
       <class name="testCases.TS1_CourseCreation">
         <methods>
+          <include name="testStep10_CreateGameQuizForModule1"/>
           <include name="afterSuite"/>
+          <include name="testStep10_CreateTimeQuizForModule1"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
-          <include name="testStep9_CreateTextHeaderForModule2"/>
+          <include name="testStep_CreateUngradedSurveyQuizForModule1"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- testCases.TS1_CourseCreation -->

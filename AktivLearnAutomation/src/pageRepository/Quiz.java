@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utils.CreateObjectMap;
@@ -222,35 +223,71 @@ public class Quiz extends KeyWordLib {
 		}
 		
 	}
+	
+	public Boolean SetQuizDesc(RemoteWebDriver driver,String QuizDesc )
+	{
+		WebDriverWait wait=new WebDriverWait(driver,10);
+		try 
+		{
+			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("txt_QuizDesc")));
+			e.sendKeys(QuizDesc);
+			return true;
+			
+		}
+		catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			return false;
+		}
+		
+	}
+	
+	public Boolean selectQuizType(RemoteWebDriver driver,String QuizType)
+	{
+		WebDriverWait wait=new WebDriverWait(driver,10);
+		try 
+		{
+			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("drpdwn_QuizType")));
+			Select s=new Select(e);
+			s.selectByVisibleText(QuizType);
+			return true;
+		}
+		catch(Exception e1)
+		{
+			e1.printStackTrace();
+			return false;
+		}
+	}
 		
 	
-//	public Boolean SetStart_EndDateForQuiz(RemoteWebDriver driver,String StartDateTime,String EndDateTime)
-//	{
-//		WebDriverWait wait=new WebDriverWait(driver,10);
-//		
-//		try 
-//		{
-//			Thread.sleep(2000);
-//			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("lnk_NewQuiz")));
-//			e.click();
-//			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("txt_NewQuizName")));
-//			e.clear();
-//			e.sendKeys(QuizName);
-//			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("btn_AddItemButton")));
-//			e.click();	
-//			return true;
-//		} 
-//		catch (Exception e1)
-//		{
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//			return false;
-//		}
-//		
-//		//Thread.sleep(5000);
-//					
-//	}
-//	
+	public Boolean setDatesForQuiz(RemoteWebDriver driver,String StartDateTime,String EndDateTime,String DueDateTime)
+	{
+		WebDriverWait wait=new WebDriverWait(driver,10);
+		
+		try 
+		{
+			Thread.sleep(2000);
+			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("txt_DueDate")));
+			e.sendKeys(DueDateTime);
+			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("txt_StartDate")));
+			e.clear();
+			e.sendKeys(StartDateTime);
+			e=wait.until(ExpectedConditions.elementToBeClickable(objmap.getLocator("txt_EndDate")));
+			e.clear();
+			e.sendKeys(EndDateTime);	
+			return true;
+		} 
+		catch (Exception e1)
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			return false;
+		}
+		
+		//Thread.sleep(5000);
+					
+	}
+	
 
 	
 	

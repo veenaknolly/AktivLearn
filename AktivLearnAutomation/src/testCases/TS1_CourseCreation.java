@@ -105,67 +105,81 @@ public class TS1_CourseCreation {
 	 		Thread.sleep(2000);
 	 }
 	 @Test(priority=35)
-	 public void testStep8_CreateTextHeaderForModule1() throws InterruptedException
+	 public void testStep8_CreateTextHeader_ContentPagesForModule1() throws InterruptedException
 	 {
 		 Boolean result=false;
 	 	result=crs.CreateNewModuleItem(driver, "Module1", "Text header");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=tx.CreateNewTextHeader(driver, "Header1");
+	 	result=tx.CreateNewTextHeader(driver, "Content Pages");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
 	 		
 	 }
-	 @Test(priority=40)
-	 public void testStep8_CreateAssignmentForModule1()
+ 
+	 @Test(priority=36)
+	 public void testStep12_CreatePageHTMLForModule1()
 	 {
-		 Boolean result=false;
-	 	
-	 	try {
-	 	result=crs.CreateNewModuleItem(driver, "Module1", "Assignment");
-	 	result=assgn.CreateNewAssignment(driver, "Assign1");
+	 	Boolean result=false;
+	 	result=crs.CreateNewModuleItem(driver, "Module1", "Content Page");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	//result=assgn.SettingPropertiesForAssignment(driver, "Assign1");
-	 	result=assgn.clickOnEditButtonOfAssignment(driver, "Assign1");
+	 	result=cnt.CreateNewPage(driver, "Content Page-HTML");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=assgn.setAssignmentPoints(driver, "20");
+	 	result=cnt.clickOnEditButtonPage(driver, "Content Page-HTML");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=assgn.clickOnSaveButton(driver);
-	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	Thread.sleep(2000);
+	 	cnt.saveChanges(driver);
 	 	crs.AccessingModulesPage(driver);
-
-	 	} catch (InterruptedException e) {
-	 		// TODO Auto-generated catch block
-	 		e.printStackTrace();
-	 	}
-	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 		
+	 	
 	 }
-	 
-	 @Test(priority=41)
-	 public void testStep_ExternalURLtForModule1() throws InterruptedException
+	 @Test(priority=37)
+	 public void testStep_CreatePageVideoForModule1()
+	 {
+	 	Boolean result=false;
+	 	result=crs.CreateNewModuleItem(driver, "Module1", "Content Page");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=cnt.CreateNewPage(driver, "Content Page-Video");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=cnt.clickOnEditButtonPage(driver, "Content Page-Video");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=cnt.selectLinktoURL(driver,"https://www.youtube.com/watch?v=tdE2-xI3VNE");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	cnt.saveChanges(driver);
+	 	crs.AccessingModulesPage(driver);
+	 	
+	 	
+	 }
+	 @Test(priority=38)
+	 public void testStep_CreatePageImageForModule1()
+	 {
+	 	Boolean result=false;
+	 	result=crs.CreateNewModuleItem(driver, "Module1", "Content Page");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=cnt.CreateNewPage(driver, "Content Page-Image");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=cnt.clickOnEditButtonPage(driver, "Content Page-Image");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=cnt.selectLinktoURL(driver,"http://seasonzindia.in/Sales/Images/Kerala%20honeymoon%20tour%20Packages.jpg");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	cnt.saveChanges(driver);
+	 	crs.AccessingModulesPage(driver);
+	 	
+	 	
+ }
+	 @Test(priority=39)
+	 public void testStep8_CreateTextHeader_QuizzesForModule1() throws InterruptedException
 	 {
 		 Boolean result=false;
-	 	
-	 	result=crs.CreateNewModuleItem(driver, "Module1", "External URL");
+	 	result=crs.CreateNewModuleItem(driver, "Module1", "Text header");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=exturl.setTitle(driver, "THe title");
+	 	result=tx.CreateNewTextHeader(driver, "Quizzes");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	Thread.sleep(2000);
-	 	result=exturl.selectURLContentType(driver, "video");
-	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=exturl.createNewExternalURLItem(driver, "https://www.youtube.com/watch?v=JGwWNGJdvx8");
-	 	Assert.assertEquals((Boolean)result, (Boolean)true);	
-	 }
-
-	 @Test(priority=45)
-	 public void testStep9_CreateQuizForModule1()
+	 }		
+	 
+	 @Test(priority=40)
+	 public void testStep9_CreateNormalQuizForModule1()
 	 {
 		 Boolean result=false;
 	 	try
 	 	{
 	 	
-//	 	result=qz.AccessingModulesPage(driver);
-//	 	Assert.assertEquals((Boolean)result, (Boolean)true);
 	 	result=crs.CreateNewModuleItem(driver, "Module1", "Quiz");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
 	 	result=qz.CreateNewQuiz(driver, "Normal Quiz");
@@ -188,8 +202,8 @@ public class TS1_CourseCreation {
 	 	
 	 }
 
-	 @Test(priority=52)
-	 public void testStep10_CreateQuizForModule2()
+	 @Test(priority=41)
+	 public void testStep10_CreateGameQuizForModule1()
 	 {
 	 	Boolean result=false;
 	 	
@@ -197,15 +211,44 @@ public class TS1_CourseCreation {
 	 	try
 	 	{
 	 		Thread.sleep(1000);
-	 		result=crs.CreateNewModuleItem(driver, "Module2", "Quiz");
+	 		result=crs.CreateNewModuleItem(driver, "Module1", "Quiz");
 	 		Assert.assertEquals((Boolean)result, (Boolean)true);
 	 		result=qz.CreateNewQuiz(driver, "Game Quiz");
 	 		Assert.assertEquals((Boolean)result, (Boolean)true);
 	 		result=qz.clickOnEditButtonForQuiz(driver, "Game Quiz");
 		 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 		result=qz.SetTimeLimit(driver, "2");
-	 		Assert.assertEquals((Boolean)result, (Boolean)true);
 	 		result=qz.SetGameQuiz(driver, "jumpshot");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.setQuestionBank(driver, "True Or False");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		Thread.sleep(2000);
+	 		result=qz.AccessingModulesPage(driver);
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		Thread.sleep(3000);
+
+	 	}
+	 	 catch (InterruptedException e) {
+	 			// TODO Auto-generated catch block
+	 			e.printStackTrace();
+	 		}
+	 }
+	 
+	 @Test(priority=42)
+	 public void testStep10_CreateTimeQuizForModule1()
+	 {
+	 	Boolean result=false;
+	 	
+	 	
+	 	try
+	 	{
+	 		Thread.sleep(1000);
+	 		result=crs.CreateNewModuleItem(driver, "Module1", "Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.CreateNewQuiz(driver, "Time Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.clickOnEditButtonForQuiz(driver, "Time Quiz");
+		 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.SetTimeLimit(driver, "2");
 	 		Assert.assertEquals((Boolean)result, (Boolean)true);
 	 		result=qz.setQuestionBank(driver, "True Or False");
 	 		Assert.assertEquals((Boolean)result, (Boolean)true);
@@ -220,6 +263,101 @@ public class TS1_CourseCreation {
 	 		}
 	 }
 
+	 @Test(priority=43)
+	 public void testStep_CreateUngradedSurveyQuizForModule1()
+	 {
+	 	Boolean result=false;
+	 	
+	 	
+	 	try
+	 	{
+	 		Thread.sleep(1000);
+	 		result=crs.CreateNewModuleItem(driver, "Module1", "Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.CreateNewQuiz(driver, "Ungraded Survey Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.clickOnEditButtonForQuiz(driver, "Ungraded Survey Quiz");
+		 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.selectQuizType(driver, "Ungraded survey");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+//	 		result=qz.SetQuizDesc(driver, "1914 translation by H. Rackham\\n\" + \n" + 
+//	 				"					\"\\\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\\\"\"");
+//	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.setQuestionBank(driver, "True Or False");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		Thread.sleep(2000);
+	 		result=qz.AccessingModulesPage(driver);
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+
+	 	}
+	 	 catch (InterruptedException e) {
+	 			// TODO Auto-generated catch block
+	 			e.printStackTrace();
+	 		}
+	 }
+
+	 @Test(priority=44)
+	 public void testStep10_CreateExpiredQuizForModule1()
+	 {
+	 	Boolean result=false;
+	 	
+	 	
+	 	try
+	 	{
+	 		Thread.sleep(1000);
+	 		result=crs.CreateNewModuleItem(driver, "Module1", "Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.CreateNewQuiz(driver, "Expired Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.clickOnEditButtonForQuiz(driver, "Expired Quiz");
+		 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.setDatesForQuiz(driver, "7 Jul at 11:30", "7 Aug at 11:30", "1 Aug at 11:30");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.setQuestionBank(driver, "True Or False");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		Thread.sleep(2000);
+	 		result=qz.AccessingModulesPage(driver);
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+
+	 	}
+	 	 catch (InterruptedException e) {
+	 			// TODO Auto-generated catch block
+	 			e.printStackTrace();
+	 		}
+	 }
+	 
+	 @Test(priority=45)
+	 public void testStep_CreateFutureQuizForModule1()
+	 {
+	 	Boolean result=false;
+	 	
+	 	
+	 	try
+	 	{
+	 		Thread.sleep(1000);
+	 		result=crs.CreateNewModuleItem(driver, "Module1", "Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.CreateNewQuiz(driver, "Future Quiz");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.clickOnEditButtonForQuiz(driver, "Future Quiz");
+		 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.setDatesForQuiz(driver, "7 Nov at 11:30", "7 Jan 2018 at 11:30", "15 Dec at 11:30");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		result=qz.setQuestionBank(driver, "True Or False");
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		Thread.sleep(2000);
+	 		result=qz.AccessingModulesPage(driver);
+	 		Assert.assertEquals((Boolean)result, (Boolean)true);
+
+	 	}
+	 	 catch (InterruptedException e) {
+	 			// TODO Auto-generated catch block
+	 			e.printStackTrace();
+	 		}
+	 }
+	
+
+
 	 @Test(priority=51)
 	 public void testStep9_CreateTextHeaderForModule2() throws InterruptedException
 	 {
@@ -227,10 +365,55 @@ public class TS1_CourseCreation {
 	 	
 	 	result=crs.CreateNewModuleItem(driver, "Module2", "Text header");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=tx.CreateNewTextHeader(driver, "Header2");
+	 	result=tx.CreateNewTextHeader(driver, "Others");
 	 	Assert.assertEquals((Boolean)result, (Boolean)true);
 	 		
 	 }
+	 
+	 @Test(priority=52)
+	 public void testStep_ExternalURLtForModule1() throws InterruptedException
+	 {
+		 Boolean result=false;
+	 	
+	 	result=crs.CreateNewModuleItem(driver, "Module2", "External URL");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=exturl.setTitle(driver, "THe title");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	Thread.sleep(2000);
+	 	result=exturl.selectURLContentType(driver, "video");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=exturl.createNewExternalURLItem(driver, "https://www.youtube.com/watch?v=JGwWNGJdvx8");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);	
+	 }
+	 @Test(priority=53)
+	 public void testStep8_CreateAssignmentForModule2()
+	 {
+		 Boolean result=false;
+	 	
+	 	try {
+	 	result=crs.CreateNewModuleItem(driver, "Module2", "Assignment");
+	 	result=assgn.CreateNewAssignment(driver, "Assign1");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	//result=assgn.SettingPropertiesForAssignment(driver, "Assign1");
+	 	result=assgn.clickOnEditButtonOfAssignment(driver, "Assign1");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=assgn.setAssignmentPoints(driver, "20");
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	result=assgn.clickOnSaveButton(driver);
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 	Thread.sleep(2000);
+	 	crs.AccessingModulesPage(driver);
+
+	 	} catch (InterruptedException e) {
+	 		// TODO Auto-generated catch block
+	 		e.printStackTrace();
+	 	}
+	 	Assert.assertEquals((Boolean)result, (Boolean)true);
+	 		
+	 }
+	 
+
+
 	 @Test(priority=55)
 	 public void testStep11_CreateFileForModule2()
 	 {
@@ -262,16 +445,7 @@ public class TS1_CourseCreation {
 	 	
 	 }
 
-	 @Test(priority=60)
-	 public void testStep12_CreatePageForModule2()
-	 {
-	 	Boolean result=false;
-	 	result=crs.CreateNewModuleItem(driver, "Module2", "Content Page");
-	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	result=cnt.CreateNewPage(driver, "PageForModule2");
-	 	Assert.assertEquals((Boolean)result, (Boolean)true);
-	 	
-	 }
+
   @AfterClass
   public void afterClass() {
   }
